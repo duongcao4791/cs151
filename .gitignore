@@ -1,4 +1,12 @@
-**/*.class
-.project
+.DS_Store
+*.swp
+*.iml
+*.ipr
+*.iws
 .classpath
-.settings
+.gitignore
+.project
+.settings/
+.springBeans/
+target/
+.classpath
