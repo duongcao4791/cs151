@@ -14,7 +14,7 @@ public class Bundle implements LineItem
       Adds an item to the bundle.
       @param item the item to add
    */
-   public void add(LineItem item) { items.add(item); }
+   public void add(LineItem item) { items.add(item);}
 
    public double getPrice()
    {
@@ -35,6 +35,19 @@ public class Bundle implements LineItem
       }
       return description;
    }
+
+   public int getQuantity() {
+      return 1;
+   }
+
+//   @Override
+//   public int getQuantity() {
+//      int quantity = 0;
+//      for (LineItem item : items)
+//         quantity += item.getQuantity();
+//      return quantity;
+//   }
+
 
    private ArrayList<LineItem> items;
 }

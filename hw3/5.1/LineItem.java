@@ -11,6 +11,8 @@ public interface LineItem
    /**
       Gets the description of this line item.
       @return the description
-   */   
+   */
    String toString();
+
+   int getQuantity();
 }

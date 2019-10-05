@@ -5,6 +5,7 @@ public class SimpleFormatter implements InvoiceFormatter
 {
    public String formatHeader()
    {
+
       total = 0;
       return "     I N V O I C E\n\n\n";
    }
@@ -13,7 +14,7 @@ public class SimpleFormatter implements InvoiceFormatter
    {
       total += item.getPrice();
       return (String.format(
-            "%s: $%.2f\n",item.toString(),item.getPrice()));
+            "%s: x%d $%.2f\n",item.toString(),item.getQuantity(),item.getPrice()));
    }
 
    public String formatFooter()
@@ -22,4 +23,5 @@ public class SimpleFormatter implements InvoiceFormatter
    }
 
    private double total;
+   private int quantity;
 }

@@ -3,18 +3,23 @@
 */
 public class Product implements LineItem
 {
+
    /**
       Constructs a product.
       @param description the description
       @param price the price
    */
-   public Product(String description, double price)
+   public Product(String description, double price, int quantity)
    {
       this.description = description;
       this.price = price;
+      this.quantity = quantity;
    }
    public double getPrice() { return price; }
    public String toString() { return description; }
+   public int getQuantity() { return quantity; }
+
    private String description;
    private double price;
+   private int quantity;
 }

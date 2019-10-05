@@ -5,13 +5,14 @@ public class DiscountedItem implements LineItem
 {
    /**
       Constructs a discounted item.
-      @param item the item to be discounted
-      @param discount the discount percentage
-   */
-   public DiscountedItem(LineItem item, double discount) 
+    * @param item the item to be discounted
+    * @param discount the discount percentage
+    */
+   public DiscountedItem(LineItem item, double discount, int quantity)
    { 
       this.item = item; 
       this.discount = discount;
+      this.quantity = quantity;
    }
 
    public double getPrice() 
@@ -23,8 +24,19 @@ public class DiscountedItem implements LineItem
    {
       return item.toString() + " (Discount " + discount
          + "%)";
-   } 
+   }
+
+   public int getQuantity() {
+      return 1;
+   }
+
+//   @Override
+//   public int getQuantity() {
+//      return quantity ;
+//   }
+
 
    private LineItem item;
    private double discount;
+   private int quantity;
 }
