@@ -12,9 +12,11 @@ public class SimpleFormatter implements InvoiceFormatter
 
    public String formatLineItem(LineItem item)
    {
+
       total += item.getPrice();
+      quantity += item.getQuantity();
       return (String.format(
-            "%s: x%d $%.2f\n",item.toString(),item.getQuantity(),item.getPrice()));
+            "%s: x%d $%.2f\n",item.toString(),quantity,item.getPrice()));
    }
 
    public String formatFooter()

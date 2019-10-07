@@ -37,7 +37,11 @@ public class Bundle implements LineItem
    }
 
    public int getQuantity() {
-      return 1;
+      int quantity = 0;
+
+      for(LineItem item : items)
+         quantity = item.getQuantity();
+      return quantity;
    }
 
 //   @Override

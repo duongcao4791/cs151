@@ -27,7 +27,7 @@ public class DiscountedItem implements LineItem
    }
 
    public int getQuantity() {
-      return 1;
+      return item.getQuantity();
    }
 
 //   @Override

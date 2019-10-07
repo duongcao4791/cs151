@@ -23,7 +23,6 @@ public class Invoice
    {
       int quantity = 0;
       items.add(item);
-      quantity++;
       // Notify all observers of the change to the invoice
       ChangeEvent event = new ChangeEvent(this);
       for (ChangeListener listener : listeners)
