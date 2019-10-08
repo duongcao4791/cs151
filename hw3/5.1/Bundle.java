@@ -36,13 +36,18 @@ public class Bundle implements LineItem
       return description;
    }
 
+   @Override
    public int getQuantity() {
-      int quantity = 0;
-
-      for(LineItem item : items)
-         quantity = item.getQuantity();
       return quantity;
    }
+
+//   public int getQuantity() {
+//      int quantity = 0;
+//
+//      for(LineItem item : items)
+//         quantity = item.getQuantity();
+//      return quantity;
+//   }
 
 //   @Override
 //   public int getQuantity() {
@@ -52,6 +57,10 @@ public class Bundle implements LineItem
 //      return quantity;
 //   }
 
+   public void addQuantity(int qty) {
+      quantity++;
+   }
 
    private ArrayList<LineItem> items;
+   private int quantity=0;
 }

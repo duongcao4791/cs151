@@ -9,16 +9,18 @@ public class Product implements LineItem
       @param description the description
       @param price the price
    */
-   public Product(String description, double price, int quantity)
+   public Product(String description, double price)
    {
       this.description = description;
       this.price = price;
-      this.quantity = quantity;
    }
    public double getPrice() { return price; }
    public String toString() { return description; }
    public int getQuantity() { return quantity; }
 
+   public void addQuantity(int qty) {
+      quantity++;
+   }
    private String description;
    private double price;
    private int quantity;

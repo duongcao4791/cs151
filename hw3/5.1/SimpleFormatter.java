@@ -14,9 +14,8 @@ public class SimpleFormatter implements InvoiceFormatter
    {
 
       total += item.getPrice();
-      quantity += item.getQuantity();
       return (String.format(
-            "%s: x%d $%.2f\n",item.toString(),quantity,item.getPrice()));
+            "%s: x%d $%.2f\n",item.toString(),item.getQuantity(),item.getPrice()));
    }
 
    public String formatFooter()
@@ -25,5 +24,5 @@ public class SimpleFormatter implements InvoiceFormatter
    }
 
    private double total;
-   private int quantity;
+   private int quantity=0;
 }

@@ -15,4 +15,5 @@ public interface LineItem
    String toString();
 
    int getQuantity();
+   void addQuantity(int qty);
 }

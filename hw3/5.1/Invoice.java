@@ -6,6 +6,8 @@ import javax.swing.event.*;
 */
 public class Invoice
 {
+   private int quantity;
+
    /**
       Constructs a blank invoice.
    */
@@ -21,12 +23,16 @@ public class Invoice
    */
    public void addItem(LineItem item)
    {
-      int quantity = 0;
+
       items.add(item);
+      item.addQuantity(1);
       // Notify all observers of the change to the invoice
       ChangeEvent event = new ChangeEvent(this);
-      for (ChangeListener listener : listeners)
+      for (ChangeListener listener : listeners) {
          listener.stateChanged(event);
+
+
+      }
 
    }
 

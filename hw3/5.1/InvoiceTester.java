@@ -20,13 +20,13 @@ public class InvoiceTester
 
       // Add line items to a combo box
       final JComboBox combo = new JComboBox();
-      Product hammer = new Product("Hammer", 19.95,1);
-      Product nails = new Product("Assorted nails", 9.95,1);
+      Product hammer = new Product("Hammer", 19.95);
+      Product nails = new Product("Assorted nails", 9.95);
       combo.addItem(hammer);
       Bundle bundle = new Bundle();
       bundle.add(hammer);
       bundle.add(nails);
-      combo.addItem(new DiscountedItem(bundle, 10,1));
+      combo.addItem(new DiscountedItem(bundle, 10));
 
       // Make a button for adding the currently selected
       // item to the invoice
