@@ -12,8 +12,8 @@ public interface InvoiceFormatter
 
    /**
       Formats a line item of the invoice.
-      @return the formatted line item
-   */
+    * @return
+    */
    String formatLineItem(LineItem item);
 
    /**

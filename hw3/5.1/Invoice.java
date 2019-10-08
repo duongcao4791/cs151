@@ -4,7 +4,7 @@ import javax.swing.event.*;
 /**
    An invoice for a sale, consisting of line items.
 */
-public class Invoice
+public class Invoice<itemList>
 {
    private int quantity;
 
@@ -23,15 +23,19 @@ public class Invoice
    */
    public void addItem(LineItem item)
    {
+      if (!itemList.contains(item.toString())) {         //If the itemList doesn't have the product
+         items.add(item);
+         itemList.add(item.toString());
+         item.addQuantity(1);
+      } else {
+         int index = itemList.indexOf(item.toString());
+         items.get(index).addQuantity(1);
+      }
 
-      items.add(item);
-      item.addQuantity(1);
       // Notify all observers of the change to the invoice
       ChangeEvent event = new ChangeEvent(this);
       for (ChangeListener listener : listeners) {
          listener.stateChanged(event);
-
-
       }
 
    }
@@ -73,15 +77,22 @@ public class Invoice
          };
    }
 
+
+   /**
+    * @param formatter
+    * @return all the line on the Invoice
+    */
    public String format(InvoiceFormatter formatter)
    {
       String r = formatter.formatHeader();
       Iterator<LineItem> iter = getItems();
-      while (iter.hasNext())
+      while (iter.hasNext()) {
          r += formatter.formatLineItem(iter.next());
+      }
       return r + formatter.formatFooter();
    }
 
    private ArrayList<LineItem> items;
    private ArrayList<ChangeListener> listeners;
+   List<String> itemList = new ArrayList<>();         //Create a itemList to store item string
 }

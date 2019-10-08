@@ -16,6 +16,10 @@ public class Bundle implements LineItem
    */
    public void add(LineItem item) { items.add(item);}
 
+   /**
+    * get the price of an item
+    * @return the price
+    */
    public double getPrice()
    {
       double price = 0;
@@ -25,6 +29,10 @@ public class Bundle implements LineItem
       return price;
    }
 
+   /**
+    * Show description of the item
+    * @return String
+    */
    public String toString()
    {
       String description = "Bundle: ";
@@ -36,27 +44,20 @@ public class Bundle implements LineItem
       return description;
    }
 
-   @Override
+
+   /**
+    * getQuantity of the item
+    * @return quantity
+    */
    public int getQuantity() {
       return quantity;
    }
 
-//   public int getQuantity() {
-//      int quantity = 0;
-//
-//      for(LineItem item : items)
-//         quantity = item.getQuantity();
-//      return quantity;
-//   }
 
-//   @Override
-//   public int getQuantity() {
-//      int quantity = 0;
-//      for (LineItem item : items)
-//         quantity += item.getQuantity();
-//      return quantity;
-//   }
-
+   /**
+    * Add quantity method
+    * @param qty - quantity of a product (=1)
+    */
    public void addQuantity(int qty) {
       quantity++;
    }
