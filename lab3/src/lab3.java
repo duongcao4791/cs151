@@ -10,7 +10,7 @@ public class lab3 {
     }
 
     public static void main(String[] args){
-        Object[] obj = {"text", 8, new Rectangle(50,80),"Hello", new };
+        Object[] obj = {"text", 8, new Rectangle(50,80),"Hello"};
         dumpArray(obj);
     }
 }
