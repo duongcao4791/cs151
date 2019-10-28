@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.util.concurrent.RecursiveAction;
 
 public class lab3 {
     public static void dumpArray(Object[] obj) {
@@ -10,7 +9,7 @@ public class lab3 {
     }
 
     public static void main(String[] args){
-        Object[] obj = {"text", 8, new Rectangle(50,80),"Hello"};
+        Object[] obj = {"text", 8, new Rectangle(50,80)};
         dumpArray(obj);
     }
 }
