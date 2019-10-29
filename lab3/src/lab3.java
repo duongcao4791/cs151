@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class lab3 {
 
     public static void dumpArray(Object[] obj) {
-        for(int i=1; i<obj.length;i++)
+        for(int i=0; i<obj.length;i++)
         {
             if (obj[i] instanceof Object[] || obj[i] == null) {
                 Object[] s = (Object[]) obj[i];
