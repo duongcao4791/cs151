@@ -3,11 +3,7 @@ import java.util.Arrays;
 
 
 public class lab3 {
-    private final Object[] obj;
 
-    public lab3(Object[] obj) {
-        this.obj = obj;
-    }
     public static void dumpArray(Object[] obj) {
         System.out.println(Arrays.deepToString(obj));
     }
