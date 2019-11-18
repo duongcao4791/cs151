@@ -94,8 +94,4 @@ public class AnimationTester
    private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
-   int d1 = 100;
-   int d2 = 1000;
-   int d3 = 1;
-   int d4 = 500;
 }
