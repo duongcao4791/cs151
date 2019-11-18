@@ -7,7 +7,18 @@ import javax.swing.*;
    This program implements an animation that moves
    a car shape.
 */
-public class AnimationTester implements Runnable
+class Car extends Thread{
+   public void run(MoveableShape shape, JLabel label, int time){
+      try{
+         shape.move();
+         Thread.sleep(time);
+         label.repaint();
+
+      } catch (InterruptedException e){};
+   }
+
+}
+public class AnimationTester
 {
    public static void main(String[] args)
    {
@@ -36,15 +47,45 @@ public class AnimationTester implements Runnable
       frame.pack();
       frame.setVisible(true);
 
-      Thread c1 = new Thread((Runnable) car1);
-      Thread c2 = new Thread((Runnable) car2);
-      Thread c3 = new Thread((Runnable) car3);
-      Thread c4 = new Thread((Runnable) car4);
+      Car c1 = new Car();
+      Car c2 = new Car();
+      Car c3 = new Car();
+      Car c4 = new Car();
 
-      c1.start();
-      c2.start();
-      c3.start();
-      c4.start();
+      Thread t1 = new Thread(c1);
+      Thread t2 = new Thread(c2);
+      Thread t3 = new Thread(c3);
+      Thread t4 = new Thread(c4);
+
+      Timer s1 = new Timer(1, event ->
+      {
+         c1.run(shape,car1,1);
+      });
+      s1.start();
+
+      Timer s2 = new Timer(50, event ->
+      {
+         c2.run(shape,car2,50);
+      });
+      s2.start();
+
+      Timer s3 = new Timer(200, event ->
+      {
+         c3.run(shape,car3,200);
+      });
+      s3.start();
+
+
+      Timer s4 = new Timer(500, event ->
+      {
+         c4.run(shape,car4,500);
+      });
+      s4.start();
+
+      t1.start();
+      t2.start();
+      t3.start();
+      t4.start();
 
 
 
@@ -53,17 +94,8 @@ public class AnimationTester implements Runnable
    private static final int ICON_WIDTH = 400;
    private static final int ICON_HEIGHT = 100;
    private static final int CAR_WIDTH = 100;
-
-   @Override
-   public void run() {
-      final int DELAY = 100;
-      // Milliseconds between timer ticks
-      Timer t = new Timer(DELAY, event ->
-      {
-         shape.move();
-         car.repaint();
-      });
-      t.start();
-
-   }
+   int d1 = 100;
+   int d2 = 1000;
+   int d3 = 1;
+   int d4 = 500;
 }

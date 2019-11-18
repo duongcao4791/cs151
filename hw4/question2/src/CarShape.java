@@ -6,6 +6,7 @@ import java.util.*;
    A car that can be moved around.
 */
 public class CarShape implements MoveableShape
+
 {
    /**
       Constructs a car item.
