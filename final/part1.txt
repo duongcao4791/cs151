@@ -1,0 +1,17 @@
+7.1 Why is there a Class object to represent void even though there is no void type?
+-> 
+9.1 In the program in Section 9.1, is it possible that both threads are sleeping at the same time?
+-> Yes, because sleep() is a method that is used to pause the process, that means if both threads sleep at the same time, the program just pause
+and resume when the time end or threads have been waked up
+That neither of the two threads is sleeping at a particular time? Explain.
+-> Yes, because two threads can be started, slept, or ended at a time.
+9.2 Give an example why you would want to terminate a thread in a Web browser program.
+-> For example, when a tab is opened, a thread is created. The tab is always running in the background. However, if we want to stop a running tab such as video playing,
+the thread is terminated to stop running.
+9.3 What is the difference between a thread that sleeps by calling sleep and a thread that waits by calling await?
+-> The major difference between them is that wait() release the lock when the wait() doesn't while waiting. The sleep() pause the process using timer,
+but with wait(), the process waiting and only come back when we call the notify() or notifyAll()
+9.4 What happens when a thread calls await and no other thread calls signalAll or signal?
+-> The thread will be in the wait state and keep waiting until the signal called.
+9.5 Suppose you call wait instead of await on a condition object in the BoundedQueue class that uses a ReentrantLock. Will the call compile? What will it do?
+->
