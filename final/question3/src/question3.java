@@ -21,7 +21,7 @@ public class question3 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
-            System.out.println("Wrong input: No file selected \n" + "Please enter correct form: java question3 filename1.txt filename2.txt ...");
+            System.out.println("Wrong input: No file selectedgit \n" + "Please enter correct form: java question3 filename1.txt filename2.txt ...");
         }
     }
 }
