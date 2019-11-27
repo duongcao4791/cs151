@@ -1,5 +1,8 @@
+Name:Duong Cao
+Final Exam - Part 1 - Written Questions
+
 7.1 Why is there a Class object to represent void even though there is no void type?
--> 
+->
 9.1 In the program in Section 9.1, is it possible that both threads are sleeping at the same time?
 -> Yes, because sleep() is a method that is used to pause the process, that means if both threads sleep at the same time, the program just pause
 and resume when the time end or threads have been waked up
