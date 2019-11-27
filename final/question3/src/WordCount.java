@@ -8,7 +8,7 @@ public class WordCount extends Thread {
     private String filename;
     int count = 0;
 
-    //Instructor
+    //Constructor
     public WordCount(String s) {
         filename = s;
     }
